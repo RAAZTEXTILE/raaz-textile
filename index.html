@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raaz Textile</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#f5f5f5;
+}
+
+/* HEADER */
+header{
+  background:#000;
+  color:#fff;
+  text-align:center;
+  padding:20px;
+}
+
+/* HERO */
+.hero{
+  background:#e6d3b3;
+  padding:30px;
+  text-align:center;
+}
+.hero h1{
+  font-size:40px;
+}
+.hero p{
+  font-size:18px;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:15px;
+  padding:20px;
+}
+
+/* CARD */
+.card{
+  background:#fff;
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+.card:hover{
+  transform:scale(1.05);
+}
+
+.card img{
+  width:100%;
+  height:150px;
+  object-fit:cover;
+}
+
+.card h3{
+  padding:10px;
+  font-size:16px;
+}
+
+/* ORDER SECTION */
+.order{
+  background:#111;
+  color:#fff;
+  padding:20px;
+  text-align:center;
+}
+
+select,input{
+  padding:10px;
+  margin:8px;
+  border-radius:5px;
+  border:none;
+}
+
+button{
+  padding:12px 20px;
+  background:#25D366;
+  color:#fff;
+  border:none;
+  border-radius:5px;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+.hero h1{font-size:28px;}
+}
+</style>
+
+</head>
+<body>
+
+<header>
+<h1>RAAZ TEXTILE</h1>
+<p>Custom T-Shirt Printing</p>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+<h1>CUSTOMIZED APPARELS</h1>
+<p>No Minimum Order • Premium Printing</p>
+</section>
+
+<!-- GRID DESIGN -->
+<section class="grid">
+
+<div class="card">
+<img src="tshirt1.jpg">
+<h3>Polo T-Shirts</h3>
+</div>
+
+<div class="card">
+<img src="tshirt2.jpg">
+<h3>Raglan Tees</h3>
+</div>
+
+<div class="card">
+<img src="tshirt1.jpg">
+<h3>All Over Print</h3>
+</div>
+
+<div class="card">
+<img src="tshirt2.jpg">
+<h3>Sleeveless</h3>
+</div>
+
+<div class="card">
+<img src="tshirt1.jpg">
+<h3>Hoodies</h3>
+</div>
+
+<div class="card">
+<img src="tshirt2.jpg">
+<h3>Custom Design</h3>
+</div>
+
+</section>
+
+<!-- ORDER SECTION -->
+<section class="order">
+
+<h2>Place Your Order</h2>
+
+<select id="size">
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+
+<select id="qty">
+<option value="1">1</option>
+<option value="5">5</option>
+<option value="10">10</option>
+</select>
+
+<br>
+
+<input id="name" placeholder="Your Name"><br>
+<input id="phone" placeholder="Phone Number"><br>
+
+<button onclick="orderNow()">Order on WhatsApp</button>
+
+</section>
+
+<script>
+function orderNow(){
+let name=document.getElementById('name').value;
+let phone=document.getElementById('phone').value;
+let size=document.getElementById('size').value;
+let qty=document.getElementById('qty').value;
+
+let msg=`Order:%0AName:${name}%0APhone:${phone}%0ASize:${size}%0AQty:${qty}`;
+
+window.open(`https://wa.me/919630902030?text=${msg}`,'_blank');
+}
+</script>
+
+</body>
+</html>
